@@ -35,7 +35,7 @@ const PILLARS = [
 ];
 
 const WHY_US = [
-  { title: "Experienced Engineer", desc: "8+ years hands-on with hardware, networks, and CCTV systems." },
+  { title: "Experienced Engineer", desc: "15+ years hands-on with hardware, networks, and CCTV systems." },
   { title: "Fast Service", desc: "Most on-site visits scheduled within 24 hours of your call." },
   { title: "Affordable Pricing", desc: "Transparent quotes with no hidden charges, ever." },
   { title: "24×7 Support", desc: "AMC clients get priority response, day or night." },
@@ -169,7 +169,7 @@ export default function Home() {
               <StatCounter value={500} suffix="+" label="Happy clients" />
               <StatCounter value={1000} suffix="+" label="CCTV cameras installed" />
               <StatCounter value={300} suffix="+" label="Network projects" />
-              <StatCounter value={8} suffix="+" label="Years experience" />
+              <StatCounter value={15} suffix="+" label="Years experience" />
             </div>
           </Reveal>
         </div>

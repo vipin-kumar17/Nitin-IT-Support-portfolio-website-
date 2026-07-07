@@ -82,7 +82,7 @@ export default function Footer() {
       <div className="border-t border-line">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-muted font-mono">
-            © {new Date().getFullYear()} NITIN KUMAR — ALL SYSTEMS SECURED
+            © {new Date().getFullYear()} Designed & Developed by VIPIN KUMAR
           </p>
           <p className="text-xs text-muted flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-signal pulse-dot" />

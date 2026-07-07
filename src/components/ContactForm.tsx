@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, FormEvent, ChangeEvent } from "react";
-import { SITE } from "@/lib/site-config";
 
 const SERVICE_OPTIONS = [
   "CCTV Installation",
@@ -11,8 +10,10 @@ const SERVICE_OPTIONS = [
   "Not sure yet",
 ];
 
+// const WEBHOOK_URL = "https://agenticvipin.app.n8n.cloud/webhook/6838dc1a-9b57-47ef-8243-b18ad97317fb";
+
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -26,17 +27,36 @@ export default function ContactForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    // NOTE: This currently opens the user's email client with a pre-filled
-    // message. To send directly from the form, wire this up to an API route
-    // (e.g. using Resend, Nodemailer, or a form backend like Formspree).
-    const subject = encodeURIComponent(`New enquiry: ${form.service}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nPhone: ${form.phone}\nService: ${form.service}\n\n${form.message}`
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error("Failed to send");
+
+      setStatus("sent");
+      setForm({ name: "", phone: "", service: SERVICE_OPTIONS[0], message: "" });
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  }
+
+  if (status === "sent") {
+    return (
+      <div className="border border-cyan/30 rounded-lg p-8 text-center">
+        <p className="font-display text-2xl text-ink mb-2">Thank you!</p>
+        <p className="text-muted">
+          Your enquiry has been received. Nitin will get back to you within 24 hours.
+        </p>
+      </div>
     );
-    window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
-    setStatus("sent");
   }
 
   return (
@@ -106,11 +126,18 @@ export default function ContactForm() {
         />
       </div>
 
+      {status === "error" && (
+        <p className="text-sm text-red-400">
+          Something went wrong. Please try again or call directly.
+        </p>
+      )}
+
       <button
         type="submit"
-        className="inline-flex items-center gap-2 bg-cyan text-bg px-8 py-4 font-medium hover:bg-cyan-glow transition-colors"
+        disabled={status === "sending"}
+        className="inline-flex items-center gap-2 bg-cyan text-bg px-8 py-4 font-medium hover:bg-cyan-glow transition-colors disabled:opacity-60"
       >
-        {status === "sent" ? "Opening your email…" : "Send Enquiry"}
+        {status === "sending" ? "Sending…" : "Send Enquiry"}
       </button>
     </form>
   );

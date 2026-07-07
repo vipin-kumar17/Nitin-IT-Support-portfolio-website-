@@ -55,7 +55,7 @@ export default function AboutPage() {
 
           <Reveal className="md:col-span-3" delay={0.1}>
             <p className="text-lg text-ink leading-relaxed mb-6">
-              I am a Computer Hardware and Networking Engineer with 8+ years
+              I am a Computer Hardware and Networking Engineer with 15+ years
               of experience in CCTV installation, LAN setup, WiFi networking,
               computer repair, and IT maintenance services — based in
               Baragadwa, Gorakhpur, Uttar Pradesh.

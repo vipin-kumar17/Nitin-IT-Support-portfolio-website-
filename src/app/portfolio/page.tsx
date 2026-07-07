@@ -8,42 +8,42 @@ const PROJECTS = [
     id: "01",
     title: "Panchayat Bhawan, Maharajganj",
     category: "Computer Hardware & Networking",
-    scope: "Desktop assembly, Windows installation, and local network configuration for a goverment office.",
+    scope: "Desktop assembly, Windows installation, and local network configuration for a goverment department.",
     image: "/panchayat.jpeg"
   },
   {
     id: "02",
     title: "Regency Hospital,Gorakhpur",
     category: "Video wall",
-    scope: "Structured cabling, enterprise Wi-Fi, POS network isolation",
+    scope: "Provided installation, troubleshooting, and maintenance of networking equipment and computer systems for hospital",
     image: "/regency.jpeg"
   },
   {
     id: "03",
     title: "Suraj Multiplex, Gorakhpur",
     category: "Complete full IT setup",
-    scope: "24-camera coverage, biometric entry, centralized NVR and Computer Networking",
+    scope: "Complete IT solution for a multiplex, including server setup, network configuration, and CCTV integration.",
     image: "/suraj.jpeg"
   },
   {
     id: "04",
     title: "AD Cinema, Gorakhpur",
     category: "Server Engineer",
-    scope: "Complete IT solution for a multiplex, including server setup, network configuration, and CCTV integration.",
+    scope: "Installation and maintenance of computer systems, network infrastructure, and IT support services for a multiplex cinema ",
     image: "/ADcinema.jpeg"
   },
   {
     id: "05",
     title: "Ganapati Hyundai,Deoria",
     category: "computer networking and CCTV installation",
-    scope: "Common-area coverage, gate camera integration, remote access for residents",
+    scope: "Implemented network infrastructure, system maintenance, and technical support services for an automotive dealership.",
     image: "/hyundai.jpeg"
   },
   {
     id: "06",
     title: "Seasons Restaurant,Gorakhpur",
     category: "CCTV and network monitoring setup",
-    scope: "Installation of CCTV cameras, network monitoring systems, and secure data storage solutions for a restaurant environment.",
+    scope: "Provided installation, troubleshooting, and maintenance of networking equipment and computer systems for restaurant.",
     image: "/seasons.jpeg"
   },
 ];
@@ -56,7 +56,7 @@ export default function PortfolioPage() {
           <Reveal className="lg:col-span-3">
             <p className="eyebrow mb-6">02 / Portfolio</p>
             <h1 className="font-display text-5xl md:text-7xl text-ink text-balance max-w-3xl">
-              Installations across homes, offices & warehouses.
+              Installations across homes, offices & warehouses, industries.
             </h1>
             <p className="mt-6 max-w-xl text-muted text-lg leading-relaxed">
               A sample of recent CCTV and network deployments. Full site photos
