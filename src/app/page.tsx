@@ -94,7 +94,7 @@ export default function Home() {
             <TiltPhoto
               src="/nitin-workspace.jpg"
               alt="Nitin Kumar — Computer Hardware, Networking & CCTV Engineer"
-              className="w-72 pr-4 sm:w-96 md:w-[500px] lg:w-[580px]"
+              className="w-72 pl-6 sm:w-96 md:w-[500px] lg:w-[580px]"
             />
           </div>
         </div>
