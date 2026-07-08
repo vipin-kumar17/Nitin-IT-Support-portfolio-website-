@@ -101,13 +101,18 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-px w-6 bg-ink transition-transform ${
-              open ? "translate-y-[3px] rotate-45" : ""
+            className={`block h-px w-6 bg-ink transition-transform duration-300 ${
+              open ? "translate-y-[7px] rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-px w-6 bg-ink transition-transform ${
-              open ? "-translate-y-[3px] -rotate-45" : ""
+            className={`block h-px w-6 bg-ink transition-opacity duration-200 ${
+              open ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`block h-px w-6 bg-ink transition-transform duration-300 ${
+              open ? "-translate-y-[7px] -rotate-45" : ""
             }`}
           />
         </button>

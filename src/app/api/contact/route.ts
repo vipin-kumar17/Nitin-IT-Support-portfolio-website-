@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, phone, service, message } = body;
+    const { name, phone, email, service, message } = body;
 
     const emailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -19,6 +19,7 @@ export async function POST(request: Request) {
           <h2>New website enquiry</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Email:</strong> ${email}</p>
           <p><strong>Service:</strong> ${service}</p>
           <p><strong>Message:</strong> ${message || "—"}</p>
         `,

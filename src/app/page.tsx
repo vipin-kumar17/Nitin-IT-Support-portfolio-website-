@@ -92,7 +92,7 @@ export default function Home() {
 
           <div className="flex lg:col-span-2 justify-center order-first lg:order-last mb-4 lg:mb-0 pr-6 lg:pr-0">
             <TiltPhoto
-              src="/nitin-workspace.jpg"
+              src="/nitin-workspace.png"
               alt="Nitin Kumar — Computer Hardware, Networking & CCTV Engineer"
               className="w-72 pl-6 sm:w-96 md:w-[500px] lg:w-[580px]"
             />

@@ -17,6 +17,7 @@ export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
+    email: "",
     service: SERVICE_OPTIONS[0],
     message: "",
   });
@@ -41,7 +42,7 @@ export default function ContactForm() {
       if (!res.ok) throw new Error("Failed to send");
 
       setStatus("sent");
-      setForm({ name: "", phone: "", service: SERVICE_OPTIONS[0], message: "" });
+      setForm({ name: "", phone: "", email: "", service: SERVICE_OPTIONS[0], message: "" });
     } catch (err) {
       console.error(err);
       setStatus("error");
@@ -74,6 +75,20 @@ export default function ContactForm() {
             onChange={handleChange}
             className="w-full bg-transparent border-b border-line focus:border-cyan outline-none py-3 text-ink transition-colors"
             placeholder="Your full name"
+          />
+        </div>
+        <div>
+          <label htmlFor="name" className="eyebrow block mb-2">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            required
+            value={form.email}
+            onChange={handleChange}
+            className="w-full bg-transparent border-b border-line focus:border-cyan outline-none py-3 text-ink transition-colors"
+            placeholder="Your email"
           />
         </div>
         <div>
