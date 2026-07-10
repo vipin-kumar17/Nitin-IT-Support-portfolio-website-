@@ -1,19 +1,23 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const TESTIMONIALS = [
-  { quote: "Excellent CCTV installation and quick support.", name: "Rohit S.", role: "Shop Owner, Gorakhpur" },
-  { quote: "Professional networking setup with affordable pricing.", name: "Javed Ahmed.", role: "Engineer" },
-  { quote: "Fixed our office network issue same day. Very reliable.", name: "Shashikant.", role: "Architect" },
-  { quote: "Camera quality is excellent and the mobile app works perfectly, even from outside the city.", name: "Sanjay Gupta", role: "Homeowner" },
-  { quote: "Set up our entire school network without any downtime. Very professional work.", name: "Priya Singh", role: "School Administrator" },
-  { quote: "AMC service is genuinely worth it — they respond within hours, not days.", name: "Manoj Yadav", role: "Restaurant Owner" },
+  { quote: "Handled Our Hyundai Showroom's Complete IT Infrastructure Installation and Network Setup Efficiently and On Time.", name: "Mr.Rohit Chhapariya.", role: "Showroom Owner",},
+  { quote: "Successfully Executed Our Multiplex's Complete IT Infrastructure Setup with Professional Installation, Integration and Ongoing Support.", name: "Mr.Er.Javed Ahmed.", role: "Engineer" },
+  { quote: "Handled Our Complete IT Network Infrastructure Setup Efficiently and Delivered Everything Within the Committed Timeline.", name: "Mr.Ar.Shashikant.", role: "Architect" },
+  { quote: "From Initial Planning to Final Deployment, the Entire IT Setup Was Executed Efficiently and with Great Attention to Detail.", name: "Mr.Ar.Gautam Agrawal", role: "Architect" },
+  { quote: "From IT Infrastructure to Audio Mini Theater Integration, Every Aspect of the Project Was Handled Smoothly and Professionally.", name: "Mr.Ar.Himanshu Arya", role: "Architect" },
+  { quote: "Very Satisfied with the IP Camera Setup. Everything Was Installed Neatly, Configured Properly and Delivered as Promised.", name: "Mr.Vivek Mishra", role: "Asistant Manager(Book My Show)" },
 ];
+
+
 
 export default function TestimonialCarousel() {
   const [index, setIndex] = useState(0);
   const [perView, setPerView] = useState(3);
+  const [paused, setPaused] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     function updatePerView() {
@@ -28,6 +32,13 @@ export default function TestimonialCarousel() {
 
   const maxIndex = Math.max(0, TESTIMONIALS.length - perView);
 
+  useEffect(() => {
+    if (!paused) return;
+    if (typeof window === "undefined" || !("ontouchstart" in window)) return;
+    const resumeTimer = setTimeout(() => setPaused(false), 6000);
+    return () => clearTimeout(resumeTimer);
+  }, [paused]);
+
   const next = useCallback(() => {
     setIndex((i) => (i >= maxIndex ? 0 : i + 1));
   }, [maxIndex]);
@@ -37,12 +48,20 @@ export default function TestimonialCarousel() {
   };
 
   useEffect(() => {
-    const timer = setInterval(next, 4500);
-    return () => clearInterval(timer);
-  }, [next]);
+    if (paused) return;
+    timerRef.current = setInterval(next, 8000);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [next, paused]);
 
   return (
-    <div className="relative">
+    <div
+      className="relative"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onTouchStart={() => setPaused(true)}
+    >
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-out"
@@ -93,6 +112,12 @@ export default function TestimonialCarousel() {
           &rarr;
         </button>
       </div>
+
+      {paused && (
+        <p className="text-center text-[11px] font-mono text-cyan/70 mt-3">
+          Paused — move away to resume
+        </p>
+      )}
     </div>
   );
 }

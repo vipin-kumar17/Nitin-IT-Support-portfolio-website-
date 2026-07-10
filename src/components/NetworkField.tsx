@@ -4,7 +4,7 @@ import { useRef, useMemo, Suspense } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
-const NODE_COUNT = 90;
+const NODE_COUNT = 45;
 const CONNECT_DIST = 3.4;
 
 function NetworkNodes() {

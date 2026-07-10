@@ -5,7 +5,7 @@ import { useState } from "react";
 const FAQS = [
   {
     q: "Do you provide home CCTV installation?",
-    a: "Yes. Nitin installs HD and 4K CCTV systems for homes of any size, including remote mobile viewing setup.",
+    a: "Yes. Nitin installs HD and 4K CCTV systems for industries and offices of any size, including remote mobile viewing setup.",
   },
   {
     q: "Do you provide office networking?",

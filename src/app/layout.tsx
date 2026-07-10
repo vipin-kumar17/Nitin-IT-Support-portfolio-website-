@@ -30,7 +30,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nitin Kumar | CCTV & Network Solutions",
+  title: "Nitin Kumar | Professional IT Infrastructure Services",
   description:
     "CCTV installation, network infrastructure, and IT support by Nitin Kumar — certified hardware & network engineer. Secure your space, connect your world.",
   keywords: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "IT AMC",
     "structured cabling",
     "security cameras",
-    "Prayagraj",
+    "Gorakhpur",
   ],
 };
 

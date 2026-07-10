@@ -8,7 +8,7 @@ import SkillBars from "@/components/SkillBars";
 import { SITE } from "@/lib/site-config";
 
 const CERTIFICATIONS = [
-  { node: "01", title: "CCNA", desc: "Cisco Certified Network Associate" },
+  { node: "01", title: "MCSE", desc: "Microsoft Certified IT infrastructure professional" },
   { node: "02", title: "CompTIA A+", desc: "Hardware & IT fundamentals certification" },
   { node: "03", title: "Hardware & Networking Diploma", desc: "Formal diploma in computer hardware and networking" },
   { node: "04", title: "CCTV Training Certificate", desc: "Specialized surveillance systems training" },
@@ -49,16 +49,17 @@ export default function AboutPage() {
       <section className="relative z-10 py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-5 gap-14 items-start">
 
-        <Reveal className="md:col-span-2">
+          <Reveal className="md:col-span-2">
             <AboutPhotoTilt />
           </Reveal>
 
           <Reveal className="md:col-span-3" delay={0.1}>
             <p className="text-lg text-ink leading-relaxed mb-6">
-              I am a Computer Hardware and Networking Engineer with 15+ years
-              of experience in CCTV installation, LAN setup, WiFi networking,
-              computer repair, and IT maintenance services — based in
-              Baragadwa, Gorakhpur, Uttar Pradesh.
+              Trusted IT Infrastructure Specialist with 15+ Years of Proven 
+              Experience Delivering End-to-End Technology Deployments, Network
+              Architecture, IP Camera Surveillance, Intercom Systems, Wi-Fi Solutions,
+              Server Infrastructure, and Ongoing Technical Support for Homes, Businesses,
+              Commercial Facilities, and Institutions in Gorakhpur, Uttar Pradesh.
             </p>
             <p className="text-muted leading-relaxed mb-6">
               My work sits at the intersection of three disciplines most

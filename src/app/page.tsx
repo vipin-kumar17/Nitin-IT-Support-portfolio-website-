@@ -1,5 +1,6 @@
 import Link from "next/link";
-import HeroScene from "@/components/HeroScene";
+import dynamic from "next/dynamic";
+const HeroScene = dynamic(() => import("@/components/HeroScene"), { ssr: false });
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import Reveal from "@/components/Reveal";
 import StatCounter from "@/components/StatCounter";
@@ -11,7 +12,7 @@ const PILLARS = [
   {
     node: "01",
     title: "Computer Hardware",
-    desc: "Desktop assembly, laptop repair, Windows installation, and printer setup — done right the first time.",
+    desc: "Professional Server, Desktop, Laptop, POS & Printer Setup, Installation, Configuration, Integration & Technical Support Services.",
     href: "/services",
   },
   {
@@ -23,7 +24,7 @@ const PILLARS = [
   {
     node: "03",
     title: "CCTV Surveillance",
-    desc: "HD & 4K CCTV systems designed around your property's real blind spots, not a generic layout.",
+    desc: "HD, 4K & IP Camera Surveillance Systems Designed Around Your Property's Real Blind Spots, Not a Generic Layout.",
     href: "/services",
   },
   {
@@ -39,7 +40,7 @@ const WHY_US = [
   { title: "Fast Service", desc: "Most on-site visits scheduled within 24 hours of your call." },
   { title: "Affordable Pricing", desc: "Transparent quotes with no hidden charges, ever." },
   { title: "24×7 Support", desc: "AMC clients get priority response, day or night." },
-  { title: "On-Site Service", desc: "Nitin comes to your home, office, or shop — not the other way around." },
+  { title: "On-Site Service", desc: "Our Team Comes to your industries, offices, or homes — not the other way around." },
   { title: "Genuine Parts", desc: "Only certified, genuine hardware and camera equipment used." },
 ];
 
@@ -63,8 +64,10 @@ export default function Home() {
               without you <span className="text-cyan">knowing.</span>
             </h1>
             <p className="mt-6 max-w-lg text-muted text-lg leading-relaxed">
-              Professional Computer Hardware, Networking &amp; CCTV Solutions —
-              Installation, Maintenance, Repair &amp; AMC Services by Nitin Kumar.
+              Professional IT Infrastructure Design &amp; Implementation Services —
+              Structured Networking, IP Camera Surveillance, Intercom &amp; Audio
+              Communication Systems, Installation, Maintenance &amp; AMC Services by
+              Nitin Kumar.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
@@ -92,7 +95,7 @@ export default function Home() {
 
           <div className="flex lg:col-span-2 justify-center order-first lg:order-last mb-4 lg:mb-0 pr-6 lg:pr-0">
             <TiltPhoto
-              src="/nitin-workspace.png"
+              src="/nitin-workspace.jpg"
               alt="Nitin Kumar — Computer Hardware, Networking & CCTV Engineer"
               className="w-72 pl-6 sm:w-96 md:w-[500px] lg:w-[580px]"
             />
@@ -174,9 +177,9 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-      
-     {/* TESTIMONIALS */}
-     <section className="relative z-10 py-24 md:py-32 border-t border-line bg-panel/40">
+
+      {/* TESTIMONIALS */}
+      <section className="relative z-10 py-24 md:py-32 border-t border-line bg-panel/40">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <Reveal className="max-w-2xl mb-16">
             <p className="eyebrow mb-4">Client Words</p>

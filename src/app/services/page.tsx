@@ -38,8 +38,8 @@ const CATEGORIES = [
   },
   {
     node: "05",
-    title: "Data Backup & Recovery",
-    items: ["Hard Disk Recovery", "Data Backup Solutions"],
+    title: "Intercom & Conference Hall Setup",
+    items: ["Intercom System Installation", "Conference Room Audio Setup", "Microphone & Speaker Configuration", "PA System & Audio Distribution", "Video Conferencing Equipment Setup"],
   },
   {
     node: "06",
@@ -67,8 +67,7 @@ export default function ServicesPage() {
               Built for the way your space actually runs.
             </h1>
             <p className="mt-6 max-w-xl text-muted text-lg leading-relaxed">
-              Computer hardware, networking, and CCTV — scoped to your property
-              first, with support that continues long after installation.
+            Professional IT Infrastructure Setup — IP Cameras, Networking, Wi-Fi, Intercom Systems & Ongoing Support.
             </p>
           </Reveal>
           <div className="flex lg:col-span-2 justify-center order-first lg:order-last mb-4 lg:mb-0 px-8 lg:px-0">

@@ -7,43 +7,43 @@ const PROJECTS = [
   {
     id: "01",
     title: "Panchayat Bhawan, Maharajganj",
-    category: "Computer Hardware & Networking",
-    scope: "Desktop assembly, Windows installation, and local network configuration for a goverment department.",
+    category: "Confrence hall & network setup",
+    scope: "Conference hall audio setup, network deployment, and communication system integration for a goverment department.",
     image: "/panchayat.jpeg"
   },
   {
     id: "02",
-    title: "Regency Hospital,Gorakhpur",
-    category: "Video wall",
-    scope: "Provided installation, troubleshooting, and maintenance of networking equipment and computer systems for hospital",
+    title: "Regency Hospital, Gorakhpur",
+    category: "Video wall & installation",
+    scope: "Professional video wall installation, display system configuration, content management, and infrastructure integration for a healthcare facility.",
     image: "/regency.jpeg"
   },
   {
     id: "03",
-    title: "Suraj Multiplex, Gorakhpur",
+    title: "Suraj Multiplex, Deoria",
     category: "Complete full IT setup",
-    scope: "Complete IT solution for a multiplex, including server setup, network configuration, and CCTV integration.",
+    scope: "End-to-End IT Infrastructure Setup, Networking, IP Surveillance, Server Deployment, and System Integration for a Suraj Multiplex Environment.",
     image: "/suraj.jpeg"
   },
   {
     id: "04",
-    title: "AD Cinema, Gorakhpur",
-    category: "Server Engineer",
-    scope: "Installation and maintenance of computer systems, network infrastructure, and IT support services for a multiplex cinema ",
+    title: "AD Cinemas, Gorakhpur",
+    category: "IT head",
+    scope: "Comprehensive IT Management for AD Cinemas Multiplex, Including Server Administration, Computer Systems, CCTV & IP Camera Monitoring, Network Infrastructure, and Technical Support Services.",
     image: "/ADcinema.jpeg"
   },
   {
     id: "05",
-    title: "Ganapati Hyundai,Deoria",
+    title: "Ganapati Hyundai, Deoria",
     category: "computer networking and CCTV installation",
-    scope: "Implemented network infrastructure, system maintenance, and technical support services for an automotive dealership.",
+    scope: "Delivered network infrastructure, Wi-Fi connectivity, IP camera surveillance, system maintenance, and ongoing technical support for Ganapati Hyundai Showroom and Workshop operations.",
     image: "/hyundai.jpeg"
   },
   {
     id: "06",
-    title: "Seasons Restaurant,Gorakhpur",
+    title: "Seasons Restaurant, Gorakhpur",
     category: "CCTV and network monitoring setup",
-    scope: "Provided installation, troubleshooting, and maintenance of networking equipment and computer systems for restaurant.",
+    scope: "Delivered CCTV surveillance systems, network monitoring, connectivity solutions, and technical support for Seasons Restaurant & Bar operations.",
     image: "/seasons.jpeg"
   },
 ];
@@ -56,7 +56,7 @@ export default function PortfolioPage() {
           <Reveal className="lg:col-span-3">
             <p className="eyebrow mb-6">02 / Portfolio</p>
             <h1 className="font-display text-5xl md:text-7xl text-ink text-balance max-w-3xl">
-              Installations across homes, offices & warehouses, industries.
+              Installations across industries, warehouses, & offices, homes .
             </h1>
             <p className="mt-6 max-w-xl text-muted text-lg leading-relaxed">
               A sample of recent CCTV and network deployments. Full site photos
@@ -65,7 +65,7 @@ export default function PortfolioPage() {
           </Reveal>
           <div className="flex lg:col-span-2 justify-center order-first lg:order-last mb-4 lg:mb-0 px-8 lg:px-0">
             <TiltPhoto
-              src="/server.png"
+              src="/server.jpg"
               alt="CCTV and network monitoring setup"
               className="w-full max-w-[260px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[480px]"
             />

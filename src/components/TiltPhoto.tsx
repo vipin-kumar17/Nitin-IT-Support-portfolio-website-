@@ -39,7 +39,7 @@ export default function TiltPhoto({
         ref={ref}
         onMouseMove={handleMove}
         onMouseLeave={handleLeave}
-        className="relative aspect-square rounded-lg overflow-hidden border border-cyan/25 shadow-2xl shadow-cyan/10 transition-transform duration-300 ease-out"
+        className="relative aspect-[4/5] rounded-lg overflow-hidden border border-cyan/25 shadow-2xl shadow-cyan/10 transition-transform duration-300 ease-out cursor-pointer"
       >
         <Image
           src={src}
@@ -55,7 +55,7 @@ export default function TiltPhoto({
         <span className="absolute top-3 right-3 h-5 w-5 border-t-2 border-r-2 border-cyan/70" />
         <span className="absolute bottom-3 left-3 h-5 w-5 border-b-2 border-l-2 border-cyan/70" />
         <span className="absolute bottom-3 right-3 h-5 w-5 border-b-2 border-r-2 border-cyan/70" />
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-bg/60 backdrop-blur px-2 py-1 rounded-full">
+        <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-bg/60 backdrop-blur px-2 py-1 rounded-full">
           <span className="h-1.5 w-1.5 rounded-full bg-signal pulse-dot" />
           <span className="font-mono text-[9px] text-signal tracking-wider">LIVE</span>
         </div>

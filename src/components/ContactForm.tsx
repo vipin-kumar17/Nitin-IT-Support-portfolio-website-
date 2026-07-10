@@ -3,6 +3,7 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 
 const SERVICE_OPTIONS = [
+  "Intercom & Confrence Setup",
   "CCTV Installation",
   "Network Setup",
   "IT AMC / Support",
