@@ -44,7 +44,7 @@ export default function AboutPhotoTilt() {
         <div className="absolute bottom-0 left-0 right-0 px-5 py-4 pointer-events-none">
           <p className="font-display text-lg text-ink">Nitin Kumar</p>
           <p className="font-mono text-[10px] text-cyan tracking-wider mt-1">
-            COMPUTER HARDWARE &amp; NETWORK ENGINEER
+          IT INFRASTRUCTURE SPECIALIST
           </p>
         </div>
       </div>
