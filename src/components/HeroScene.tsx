@@ -67,18 +67,11 @@ export default function HeroScene() {
     return () => clearTimeout(id);
   }, []);
 
-  useEffect(() => {
-    if (!ready) return;
-    const id = setInterval(() => invalidate(), 50);
-    return () => clearInterval(id);
-  }, [ready]);
-
   if (!ready) return null;
 
   return (
     <div className="absolute inset-0">
       <Canvas
-        frameloop="demand"
         camera={{ position: [0, 0, 5.2], fov: 45 }}
         gl={{ antialias: false, alpha: true }}
         dpr={1}
