@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo, Suspense } from "react";
+import { useRef, useMemo, Suspense, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -122,6 +122,15 @@ function NetworkNodes() {
 }
 
 export default function NetworkField() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const id = setTimeout(() => setReady(true), 300);
+    return () => clearTimeout(id);
+  }, []);
+
+  if (!ready) return null;
+
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
       <Canvas

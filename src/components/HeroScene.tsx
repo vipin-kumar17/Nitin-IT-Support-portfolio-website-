@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, Suspense } from "react";
+import { useRef, Suspense, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -60,11 +60,20 @@ function Lens() {
 }
 
 export default function HeroScene() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const id = setTimeout(() => setReady(true), 300);
+    return () => clearTimeout(id);
+  }, []);
+
+  if (!ready) return null;
+
   return (
     <div className="absolute inset-0">
       <Canvas
         camera={{ position: [0, 0, 5.2], fov: 45 }}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ antialias: false, alpha: true }}
         dpr={1}
       >
         <Suspense fallback={null}>
