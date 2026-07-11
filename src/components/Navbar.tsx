@@ -48,16 +48,12 @@ export default function Navbar() {
               <rect x="2.5" y="4" width="14" height="9.5" rx="1" stroke="currentColor" strokeWidth="1.3" />
               <line x1="7" y1="17" x2="12" y2="17" stroke="currentColor" strokeWidth="1.3" />
               <line x1="9.5" y1="13.5" x2="9.5" y2="17" stroke="currentColor" strokeWidth="1.3" />
-              <circle cx="9.5" cy="8.75" r="2.1" stroke="currentColor" strokeWidth="1" opacity="0.6">
-                <animate attributeName="r" values="1.6;2.3;1.6" dur="2.5s" repeatCount="indefinite" />
-              </circle>
+              <circle cx="9.5" cy="8.75" r="2" stroke="currentColor" strokeWidth="1" opacity="0.6" className="origin-center animate-pulse" />
             </svg>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" className="text-signal/80">
               <rect x="15" y="7" width="7" height="5" rx="1" stroke="currentColor" strokeWidth="1.3" />
               <circle cx="18.5" cy="9.5" r="1.4" stroke="currentColor" strokeWidth="1" />
-              <circle cx="21" cy="7.7" r="0.8" fill="currentColor">
-                <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite" />
-              </circle>
+              <circle cx="21" cy="7.7" r="0.8" fill="currentColor" className="origin-center animate-pulse" />
             </svg>
           </span>
         </Link>

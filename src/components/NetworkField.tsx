@@ -4,7 +4,7 @@ import { useRef, useMemo, Suspense, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
-const NODE_COUNT = 30;
+const NODE_COUNT = 20;
 const CONNECT_DIST = 3.4;
 
 function NetworkNodes() {
@@ -44,7 +44,8 @@ function NetworkNodes() {
 
   useFrame((state) => {
     frameCount.current++;
-    const skipHeavyCalc = frameCount.current % 3 !== 0;
+    if (frameCount.current % 2 !== 0) return;
+    const skipHeavyCalc = frameCount.current % 6 !== 0;
 
     const posAttr = pointsRef.current?.geometry.attributes.position as THREE.BufferAttribute;
     if (!posAttr) return;
@@ -135,7 +136,7 @@ export default function NetworkField() {
     <div className="fixed inset-0 z-0 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 8], fov: 55 }}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ antialias: false, alpha: true }}
         dpr={1}
       >
         <Suspense fallback={null}>
