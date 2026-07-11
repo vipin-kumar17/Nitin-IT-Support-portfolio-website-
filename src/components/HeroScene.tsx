@@ -65,7 +65,7 @@ export default function HeroScene() {
       <Canvas
         camera={{ position: [0, 0, 5.2], fov: 45 }}
         gl={{ antialias: true, alpha: true }}
-        dpr={[1, 1.75]}
+        dpr={1}
       >
         <Suspense fallback={null}>
           <Lens />

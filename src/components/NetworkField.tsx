@@ -4,7 +4,7 @@ import { useRef, useMemo, Suspense } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
-const NODE_COUNT = 45;
+const NODE_COUNT = 30;
 const CONNECT_DIST = 3.4;
 
 function NetworkNodes() {
@@ -122,7 +122,7 @@ export default function NetworkField() {
       <Canvas
         camera={{ position: [0, 0, 8], fov: 55 }}
         gl={{ antialias: true, alpha: true }}
-        dpr={[1, 1.5]}
+        dpr={1}
       >
         <Suspense fallback={null}>
           <NetworkNodes />
