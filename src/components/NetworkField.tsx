@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useMemo, Suspense, useState, useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useThree, invalidate } from "@react-three/fiber";
 import * as THREE from "three";
 
 const NODE_COUNT = 20;
@@ -130,11 +130,18 @@ export default function NetworkField() {
     return () => clearTimeout(id);
   }, []);
 
+  useEffect(() => {
+    if (!ready) return;
+    const id = setInterval(() => invalidate(), 50);
+    return () => clearInterval(id);
+  }, [ready]);
+
   if (!ready) return null;
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
       <Canvas
+        frameloop="demand"
         camera={{ position: [0, 0, 8], fov: 55 }}
         gl={{ antialias: false, alpha: true }}
         dpr={1}
