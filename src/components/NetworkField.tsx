@@ -40,7 +40,12 @@ function NetworkNodes() {
     return geo;
   }, []);
 
+  const frameCount = useRef(0);
+
   useFrame((state) => {
+    frameCount.current++;
+    const skipHeavyCalc = frameCount.current % 3 !== 0;
+
     const posAttr = pointsRef.current?.geometry.attributes.position as THREE.BufferAttribute;
     if (!posAttr) return;
     const arr = posAttr.array as Float32Array;
@@ -57,7 +62,7 @@ function NetworkNodes() {
     posAttr.needsUpdate = true;
 
     const linePosAttr = linesRef.current?.geometry.attributes.position as THREE.BufferAttribute;
-    if (linePosAttr) {
+    if (linePosAttr && !skipHeavyCalc) {
       const lineArr = linePosAttr.array as Float32Array;
       let idx = 0;
       const maxSegments = NODE_COUNT * 8;
