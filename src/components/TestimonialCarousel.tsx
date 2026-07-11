@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 const TESTIMONIALS = [
   { quote: "Handled Our Hyundai Showroom's Complete IT Infrastructure Installation and Network Setup Efficiently and On Time.", name: "Mr.Rohit Chhapariya.", role: "Showroom Owner",},
-  { quote: "Successfully Executed Our Multiplex's Complete IT Infrastructure Setup with Professional Installation, Integration and Ongoing Support.", name: "Mr.Er.Javed Ahmed.", role: "Engineer" },
+  { quote: "Successfully Executed Our Multiplex's Complete IT Infrastructure Setup with Professional Installation, Integration and Ongoing Support.", name: "Mr.Er.Javed Ahmad.", role: "Engineer" },
   { quote: "Handled Our Complete IT Network Infrastructure Setup Efficiently and Delivered Everything Within the Committed Timeline.", name: "Mr.Ar.Shashikant.", role: "Architect" },
   { quote: "From Initial Planning to Final Deployment, the Entire IT Setup Was Executed Efficiently and with Great Attention to Detail.", name: "Mr.Ar.Gautam Agrawal", role: "Architect" },
   { quote: "From IT Infrastructure to Audio Mini Theater Integration, Every Aspect of the Project Was Handled Smoothly and Professionally.", name: "Mr.Ar.Himanshu Arya", role: "Architect" },
