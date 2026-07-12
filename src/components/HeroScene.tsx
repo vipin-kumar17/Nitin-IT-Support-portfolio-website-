@@ -61,19 +61,10 @@ function Lens() {
 
 export default function HeroScene() {
   const [ready, setReady] = useState(false);
-  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const id = setTimeout(() => setReady(true), 300);
     return () => clearTimeout(id);
-  }, []);
-
-  useEffect(() => {
-    function handleVisibility() {
-      setVisible(document.visibilityState === "visible");
-    }
-    document.addEventListener("visibilitychange", handleVisibility);
-    return () => document.removeEventListener("visibilitychange", handleVisibility);
   }, []);
 
   if (!ready) return null;
@@ -84,7 +75,6 @@ export default function HeroScene() {
         camera={{ position: [0, 0, 5.2], fov: 45 }}
         gl={{ antialias: false, alpha: true }}
         dpr={1}
-        frameloop={visible ? "always" : "never"}
       >
         <Suspense fallback={null}>
           <Lens />
