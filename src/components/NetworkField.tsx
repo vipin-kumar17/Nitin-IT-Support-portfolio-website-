@@ -26,7 +26,7 @@ export default function NetworkField() {
       <svg
         viewBox="0 0 100 100"
         preserveAspectRatio="xMidYMid slice"
-        className="w-full h-full opacity-60 animate-network-drift"
+        className="w-full h-full opacity-60"
       >
         {LINKS.map(([a, b], i) => (
           <line
@@ -37,7 +37,9 @@ export default function NetworkField() {
             y2={NODES[b].y}
             stroke="#0E7490"
             strokeWidth="0.08"
-            opacity="0.35"
+            opacity="0.3"
+            className="animate-line-pulse"
+            style={{ animationDelay: `${(i % 10) * 0.3}s` }}
           />
         ))}
         {NODES.map((n, i) => (
@@ -45,10 +47,13 @@ export default function NetworkField() {
             key={i}
             cx={n.x}
             cy={n.y}
-            r="0.5"
+            r="0.55"
             fill="#22D3EE"
-            className="animate-node-pulse"
-            style={{ animationDelay: `${(i % 8) * 0.4}s` }}
+            className={`animate-node-float-${i % 4}`}
+            style={{
+              transformOrigin: `${n.x}px ${n.y}px`,
+              animationDelay: `${(i % 8) * 0.5}s`,
+            }}
           />
         ))}
       </svg>
